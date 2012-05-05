@@ -259,7 +259,7 @@ template<template<class N> class C,class T> int findPreCycle(T in ,int n)
 	return i;
 }
 
-void main1()
+void main()
 {
 	for (int i=0;i<100;i++)//тестирование на целочисленных значениях
 	{

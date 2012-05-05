@@ -198,7 +198,7 @@ int testprogram (const int n, const int m)// программа, которая высчитывает кол-
 	return result;
 }
 
-void main2() 
+void main() 
 {
 	int n=0,m=0,main=0,test=0;
 	for (n=1 ; n <= 10 ; n++)// обход по разным значениям n,m. При m>5 test начинает сильно тормозить, при n>6 main так-же начинает подтормаживать, но гораздо меньше
