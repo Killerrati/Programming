@@ -140,7 +140,7 @@ public:
 		last = 0; 
 	}
 
-	DFSiterator operator ++() 
+	DFSiterator operator ++(int) 
 		/*
 		оператор ++, схема работы: вершины храняться в некотором определённом порядке, с помощью которого, зная где ты был до этого шага (для этого служит указатель last)
 		можно узнать куда идти дальше... точнее сначала проверяем, можно ли спуститься вниз, учитывая, что мы могли только что от туда прити, затем уже решаем куда нам идти.
@@ -224,7 +224,7 @@ public:
 	}
 };
 
-void createTree (vertex* begin, int* number, int max, set<int> *name_space)
+void CreateTree (vertex* begin, int* number, int max, set<int> *name_space)
 	/*
 	Генератор случайного дерева, началом которого является begin, number служебный счётчик, max - количество вершин в дереве, name_space - служебная куча для хранения
 	уже использованных имён (для исключения совпадения). Работает рекурсивным методом
@@ -245,7 +245,7 @@ void createTree (vertex* begin, int* number, int max, set<int> *name_space)
 
 		vertex* temp_vertex = new vertex(temp_String);// создаём вершину
 		begin->addEdge(temp_vertex);// проводим до него ребро
-		createTree (temp_vertex , number , max, name_space);// и спускаемся рекурсивно
+		CreateTree (temp_vertex , number , max, name_space);// и спускаемся рекурсивно
 	}
 }
 
@@ -387,7 +387,7 @@ void main()
 		vertex* Tree = new vertex("0");
 		set<int>* name_space = new set<int>;
 		
-		createTree (Tree , num , number, name_space);// создаём
+		CreateTree (Tree , num , number, name_space);// создаём
 		DFSiterator it(Tree);
 
 		vector<string> bfs = BFS(Tree);//создаём дерево для тестирования неоднозначного восстановления с последующим сравниванием BFS и DFS
